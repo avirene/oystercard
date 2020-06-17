@@ -4,7 +4,7 @@ class Oystercard
   
   def initialize
     @balance = 0
-    @location = false
+    @travelling = false
   end
     
   def top_up(amount)
@@ -17,15 +17,15 @@ class Oystercard
   end
   
   def in_journey?
-    @location
+    @travelling
   end
   
   def touch_in
-    @location = true
+    @travelling = true
   end
   
   def touch_out
-    @location = false
+    @travelling = false
   end
   
 end
