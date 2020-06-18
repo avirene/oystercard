@@ -24,11 +24,11 @@ class Oystercard
   end
   
   def touch_out(station)
-    deduct(MINIMUM_FARE)
-    @entry_station = nil
     @exit_station = station
-    #hash = {@entry_station => @exit_station}
-     journeys << {@entry_station => @exit_station}
+    deduct(MINIMUM_FARE)
+    @journeys << {@entry_station => @exit_station}
+    @entry_station = nil
+    @exit_station
   end
   
   private

@@ -63,23 +63,23 @@ describe Oystercard do
   end
   
   describe "#touch_out" do
-    xit "can touch out" do
+    it "can touch out" do
       subject.top_up(1)
       subject.touch_in(station)
-      subject.touch_out
+      subject.touch_out(station)
       expect(subject).not_to be_in_journey
     end
     
-    xit "should forget the entry station from touch in" do
-      oystercard.top_up(1)
-      oystercard.touch_in(station)
-      oystercard.touch_out
-      expect(oystercard.entry_station).to be nil
-    end
+    # it "should forget the entry station from touch in" do
+    #   oystercard.top_up(1)
+    #   oystercard.touch_in(station)
+    #   oystercard.touch_out(station)
+    #   expect(oystercard.entry_station).to be nil
+    # end
     
-    xit "deducts balance by minimum fare" do
+    it "deducts balance by minimum fare" do
       oystercard.top_up(20)
-      expect { oystercard.touch_out }.to change{ oystercard.balance }.by(- Oystercard::MINIMUM_FARE)
+      expect { oystercard.touch_out(station) }.to change{ oystercard.balance }.by(- Oystercard::MINIMUM_FARE)
     end
     
     it "should respond to an exit station that is provided as an argument" do
@@ -98,7 +98,7 @@ describe Oystercard do
     end
   end
   
-  describe '#journeys' do
+  describe '#journeys (attribute reader)' do
     it "should store journeys using entry and exit station of each trip" do
     oystercard = Oystercard.new
     oystercard.top_up(10)
