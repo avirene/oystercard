@@ -1,4 +1,5 @@
 require "oystercard"
+
 describe Oystercard do
   let(:oystercard) { Oystercard.new }
   let(:station) { double :station }
@@ -69,13 +70,6 @@ describe Oystercard do
       subject.touch_out(station)
       expect(subject).not_to be_in_journey
     end
-    
-    # it "should forget the entry station from touch in" do
-    #   oystercard.top_up(1)
-    #   oystercard.touch_in(station)
-    #   oystercard.touch_out(station)
-    #   expect(oystercard.entry_station).to be nil
-    # end
     
     it "deducts balance by minimum fare" do
       oystercard.top_up(20)

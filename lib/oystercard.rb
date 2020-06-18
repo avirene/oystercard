@@ -38,3 +38,9 @@ class Oystercard
   end
   
 end
+
+# oystercard = Oystercard.new
+# oystercard.top_up(5)
+# oystercard.touch_in("Angel")
+# oystercard.in_journey?
+# p oystercard.in_journey?
