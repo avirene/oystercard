@@ -92,14 +92,11 @@ describe Oystercard do
     end
   end
   
-  describe '#journeys (attribute reader)' do
     it "should store journeys using entry and exit station of each trip" do
     oystercard = Oystercard.new
     oystercard.top_up(10)
     oystercard.touch_in(station)
     oystercard.touch_out(station)
     expect(oystercard.journeys.length).to eq(1)
-    puts oystercard.journeys
     end
-  end
 end
