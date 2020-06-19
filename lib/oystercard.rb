@@ -6,6 +6,7 @@ class Oystercard
   def initialize
     @balance = 0
     @journeys = []
+    #@journeys = Journeylog.new
   end
   
     
@@ -21,6 +22,7 @@ class Oystercard
   def touch_in(station)
     fail "Not enough money to travel." if @balance < MINIMUM_FARE
     @journeys << Journey.new(station)
+    #@journeys.start(station)
   end
   
   def touch_out(station)

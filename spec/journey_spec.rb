@@ -2,12 +2,11 @@ require "journey.rb"
 
 describe Journey do
 let(:station) { double :station, zone: 1}
-  # describe "initialize" do
-  #   it "creates an instance of a journey" do
-  #     journey = Journey.new
-  #     expect(journey).to be_an_instance_of(Journey)
-  #   end
-  # end
+
+it do
+ p station
+ p station.zone
+ end
   it "knows if a journey is not complete" do
     expect(subject).not_to be_complete
   end
